@@ -7,8 +7,13 @@ ifeq ($(CONFIG_ARCH_WAIPIO), y)
 endif
 
 ifeq ($(CONFIG_ARCH_KALAMA), y)
+ifdef CONFIG_TARGET_PRODUCT_VERMEER
+	include $(TOUCH_ROOT)/config/gki_vermeertouch.conf
+	LINUX_INC += -include $(TOUCH_ROOT)/config/gki_vermeertouchconf.h
+else
 	include $(TOUCH_ROOT)/config/gki_kalamatouch.conf
 	LINUX_INC += -include $(TOUCH_ROOT)/config/gki_kalamatouchconf.h
+endif
 endif
 
 ifeq ($(CONFIG_ARCH_KHAJE), y)
