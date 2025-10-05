@@ -573,6 +573,8 @@ struct goodix_ts_core {
 
 	bool nonui_enabled;
 	bool high_report_rate;
+ 
+	u8 eventsdata;
 };
 
 /* external module structures */
